@@ -53,6 +53,10 @@ table {
 
 :root {
     font-family: 'Roboto', sans-serif;
+    --gray-accent: #9ca3af;
+    --black-accent: #000;
+    --orange-accent: #f97316;
+    --light-orange-accent: #ffedd5;
 }
 
 
@@ -75,6 +79,12 @@ h4 {
     font-size: 1.3rem;
 }
 
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
 html,
 body {
     min-height: 100svh;
@@ -83,11 +93,12 @@ body {
 body {
     display: grid;
     grid-template-rows: 1fr auto;
+    background-color: var(--light-orange-accent);
+    color: var(--black-accent);
 }
 
 main {
     display: grid;
-    gap: 12px;
     grid-template-columns: 1fr 5fr;
 }
 
@@ -97,7 +108,10 @@ main {
     gap: 36px;
     grid-template-rows: 1fr 3fr 5fr;
     padding: 24px 36px;
-
+    background-color: var(--orange-accent);
+    color: var(--black-accent);
+    fill: var(--black-accent);
+    font-weight: bold;
 }
 
 #sidebar h1,
@@ -118,6 +132,9 @@ div.help-links li {
     gap: 12px;
     grid-template-rows: 1fr 2fr;
     padding: 12px 24px;
+    background-color: var(--black-accent);
+    color: var(--orange-accent);
+    fill: var(--orange-accent);
 }
 
 div.header-upper-section {
@@ -129,6 +146,7 @@ div.header-upper-section {
 
 div.header-upper-section>input {
     width: 50%;
+    background-color: var(--light-orange-accent);
 }
 
 div.header-upper-section>img {
@@ -148,6 +166,15 @@ div.header-lower-section>ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
+}
+
+div.header-lower-section>ul button {
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 4px 24px;
+    background-color: var(--orange-accent);
+    border: 1px solid black;
 }
 
 div.logo {
@@ -186,7 +213,7 @@ div.logo>img {
 div.projects-wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 12px;
+    gap: 24px;
 }
 
 div.project-card {
@@ -194,6 +221,13 @@ div.project-card {
     border: 1px solid black;
     display: grid;
     padding: 24px;
+    background-color: var(--black-accent);
+    color: var(--orange-accent);
+    fill: var(--orange-accent);
+}
+
+div.project-card p {
+    color: var(--gray-accent);
 }
 
 div.interactions {
@@ -214,12 +248,18 @@ div.content-aside {
 div.announcements-wrapper {
     display: grid;
     border: 1px solid black;
+    background-color: var(--black-accent);
+    color: var(--orange-accent);
 }
 
 div.announcement {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid var(--light-orange-accent);
     padding: 24px 0;
     margin: 0 24px;
+}
+
+div.announcement p {
+    color: var(--gray-accent);
 }
 
 div.announcement:last-of-type {
@@ -232,6 +272,9 @@ div#trending {
 
 div.trending-wrapper {
     border: 1px solid black;
+    background-color: var(--black-accent);
+    color: var(--orange-accent);
+    padding: 12px;
 }
 
 div.trending-preview {
@@ -247,7 +290,48 @@ div.trending-preview>img {
     width: 50px;
 }
 
+.gray-font {
+    color: var(--gray-accent);
+}
+
+div.project-card,
+div.announcements-wrapper,
+div.trending-wrapper {
+    box-shadow: 2px 2px 5px 1px var(--orange-accent);
+}
+
+#sidebar h1:hover,
+div.nav-links li:hover,
+div.help-links li:hover,
+div.header-lower-section>ul button:hover  {
+    scale: 1.2;
+    transition: scale 200ms ease-in-out;
+}
+
+#sidebar h1:hover,
+div.nav-links li:hover,
+div.help-links li:hover {
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+div.project-card,
+div.announcements-wrapper,
+div.trending-wrapper,
+button,
+input[type="search"] {
+    border-radius: 15px;
+}
+
+
 footer {
     text-align: center;
     padding: 12px;
+    background-color: black;
+    color: var(--light-orange-accent);
+    font-size: 1.5rem;
+}
+
+footer a {
+    color: var(--orange-accent) !important;
 }
